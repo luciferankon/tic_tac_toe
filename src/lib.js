@@ -1,3 +1,6 @@
+const {winningConditions} = require('./constants.js');
+const {justifiedCells} = require('./utilLib.js');
+
 //Initialize game boardData
 const initBoardData = function(){
   return [ 
