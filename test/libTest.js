@@ -1,27 +1,28 @@
 const assert = require('assert');
-const {initBoard,
-  placeSymbol
+const {initBoardData,
+  markSymbol,
+  printBoard
 } = require('../src/lib.js');
 
-describe('init board',function(){
+describe('init boardData data',function(){
   it('should return a 3x3 array containing all null values',function(){
-    assert.deepEqual(initBoard(),[[null,null,null],[null,null,null],[null,null,null]]);
+    assert.deepEqual(initBoardData(),[[null,null,null],[null,null,null],[null,null,null]]);
   });
 });
 
-describe('place symbol',function(){
-  let board;
+describe('mark symbol',function(){
+  let boardData;
   beforeEach(function(){
-    board = [[null,null,null],[null,null,null],[null,null,null]];
+    boardData = [[null,null,null],[null,null,null],[null,null,null]];
   });
 
   it('should return a 3x3 array with specified symbol at the specified position',function(){
-    assert.deepEqual(placeSymbol(2, "X", board), [[null,"X",null],[null,null,null],[null,null,null]]);
+    assert.deepEqual(markSymbol(2, "x", boardData), [[null,"x",null],[null,null,null],[null,null,null]]);
   });
 
   it("should change original array", function(){
-    assert.deepEqual(placeSymbol(2, "X", board), [[null,"X",null],[null,null,null],[null,null,null]]);
-    assert.deepEqual(placeSymbol(5, "X", board), [[null,"X",null],[null,"X",null],[null,null,null]]);
-    assert.deepEqual(placeSymbol(8, "X", board), [[null,"X",null],[null,"X",null],[null,"X",null]]);
+    assert.deepEqual(markSymbol(2, "x", boardData), [[null,"x",null],[null,null,null],[null,null,null]]);
+    assert.deepEqual(markSymbol(5, "x", boardData), [[null,"x",null],[null,"x",null],[null,null,null]]);
+    assert.deepEqual(markSymbol(8, "x", boardData), [[null,"x",null],[null,"x",null],[null,"x",null]]);
   });
 });

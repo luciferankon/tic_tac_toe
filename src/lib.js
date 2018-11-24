@@ -1,5 +1,5 @@
-//Initialize game board
-const initBoard = function(){
+//Initialize game boardData
+const initBoardData = function(){
   return [ 
     [null,null,null],
     [null,null,null],
@@ -7,13 +7,13 @@ const initBoard = function(){
   ];
 }
 
-//Insert symbol into board
-const placeSymbol = function(position, symbol, board){
+//Mark symbol into boardData
+const markSymbol = function(position, symbol, boardData){
   let row = parseInt((position - 1) / 3);
   let column = (position - 1) % 3;
-  board[row][column] = symbol;
-  return board;
+  boardData[row][column] = symbol;
+  return boardData;
 }
   
-exports.initBoard = initBoard;
-exports.placeSymbol = placeSymbol;
+exports.initBoardData = initBoardData;
+exports.markSymbol = markSymbol;
