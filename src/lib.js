@@ -14,6 +14,26 @@ const markSymbol = function(position, symbol, boardData){
   boardData[row][column] = symbol;
   return boardData;
 }
-  
+
+//justifies each cell
+//move to utilLib
+const justifyCell = function(cell) {
+  if (cell == null) {
+    return '   ';
+  }
+  return ' ' + cell + ' ';
+};
+
+//generating the board structure
+const generateBoard = function(boardValues) {
+  let board = [];
+  for (let row = 0; row < 3; row++) {
+    let justifiedCells = boardValues[row].map(justifyCell).join('|');
+    board.push(justifiedCells);
+  }
+  return board.join('\n-----------\n');
+};
+
+exports.generateBoard = generateBoard;
 exports.initBoardData = initBoardData;
 exports.markSymbol = markSymbol;
