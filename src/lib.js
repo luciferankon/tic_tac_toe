@@ -1,5 +1,5 @@
 const {winningConditions} = require('./constants.js');
-const {justifiedCells} = require('./utilLib.js');
+const {justifyCell} = require('./utilLib.js');
 
 //Initialize game boardData
 const initBoardData = function(){
@@ -17,15 +17,6 @@ const markSymbol = function(position, symbol, boardData){
   boardData[row][column] = symbol;
   return boardData;
 }
-
-//justifies each cell
-//move to utilLib
-const justifyCell = function(cell) {
-  if (cell == null) {
-    return '   ';
-  }
-  return ' ' + cell + ' ';
-};
 
 //generating the board structure
 const generateBoard = function(boardValues) {
